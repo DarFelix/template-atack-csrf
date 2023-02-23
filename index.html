@@ -17,10 +17,11 @@
 </body>
 <script type="module">
  
+    
     const response = await fetch(`http://localhost:3000/csrf-token`,{
                                   method: 'GET',
-                                  credentials: 'same-origin'     
-                                 }).then(() => console.log("llamado a seguridad"));;
+                                  credentials: 'include'     
+                                 }).then(() => console.log("set cookies!!"));;
   
     
     
@@ -30,7 +31,7 @@
       headers: {
         "Content-Type": "application/json",
       }
-    }).then((data) => console.log(data));
+    }).then(() => console.log("evil promise"));
    
   </script>
 </html>
