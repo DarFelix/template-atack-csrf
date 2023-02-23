@@ -16,7 +16,9 @@
 </body>
 <script type="module">
  
+    const response = await fetch(`http://localhost:3000/csrf-token`).then(() => console.log("llamado a seguridad"));;
   
+    
     
     const getList = await fetch(`http://localhost:3000/api/v1/usuarios/auth/`, {
       method: "POST",
