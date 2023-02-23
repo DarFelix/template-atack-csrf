@@ -18,16 +18,16 @@
 <script type="module">
  
     
-    const response = await fetch(`http://localhost:3000/csrf-token`,{
+    await fetch(`http://localhost:3000/csrf-token`,{
                                   method: 'GET',
-                                  credentials: 'include'     
+                                  credentials: 'same-origin'     
                                  }).then(() => console.log("set cookies!!"));;
   
     
     
-    const getList = await fetch(`http://localhost:3000/api/v1/usuarios/auth/`, {
+    await fetch(`http://localhost:3000/api/v1/usuarios/auth/`, {
       method: "POST",
-      credentials: "include",
+      credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
       }
