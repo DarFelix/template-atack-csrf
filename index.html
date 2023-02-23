@@ -22,8 +22,8 @@
     
     const getList = await fetch(`http://localhost:3000/api/v1/usuarios/auth/`, {
       method: "POST",
+      credentials: 'include',
       headers: {
-        "x-csrf-token": '8a2d86b17fabb98e0153d7c620a4d65a5cb1f6c6a50827d70cdff17a97234974b26ee50e5cbccad8794686a5b354b0af90604bbb158a65a371c6ac60b1ad1936',
         "Content-Type": "application/json",
       }
     }).then((data) => console.log(data));
