@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <title>Example attack csrf</title>
 </head>
 <body>
@@ -16,13 +17,16 @@
 </body>
 <script type="module">
  
-    const response = await fetch(`http://localhost:3000/csrf-token`).then(() => console.log("llamado a seguridad"));;
+    const response = await fetch(`http://localhost:3000/csrf-token`,{
+                                  method: 'GET',
+                                  credentials: 'same-origin'     
+                                 }).then(() => console.log("llamado a seguridad"));;
   
     
     
     const getList = await fetch(`http://localhost:3000/api/v1/usuarios/auth/`, {
       method: "POST",
-      credentials: "same-origin",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       }
